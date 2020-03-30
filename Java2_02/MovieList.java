@@ -1,67 +1,52 @@
 package Java2_02;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class MovieList {
-
     private ArrayList<String> movieList = new ArrayList<>();
 
     public static void main(String[] args) {
-//        Scanner in = new Scanner(System.in);
-//
-//        System.out.println("How many film do you like?");
-//        int n = in.nextInt();
-//
-//        String[] movie = new String[n];
-//
-//        for(int i = 0; i < movie.length; i++){
-//            System.out.println("Movie " + (i+1) + ":");
-//            movie[i] = in.next();
-//        }
+        System.out.println("    Movie List ");
+        System.out.println("-----------------");
 
         MovieList list = new MovieList();
-        list.addMovie("1");
-        list.addMovie("2");
-        list.addMovie("3");
-        list.addMovie("4");
-        list.addMovie("5");
-
+        list.addMovie("");
         list.displayList();
-        list.addMovie("LTR");
-        list.updateMovie(3,"Nope");
-        list.removeMovie(5);
-        list.findMovie("3");
+        list.updateMovie(4,"House of Wax");
+        list.removeMovie(3);
+        list.findMove("9");
+
     }
 
     public void addMovie(String movie){
-        movieList.add(movie);
+        movieList.add("The House In The Wood");
+        movieList.add("Finding Nemo");
+        movieList.add("Spririted Away");
+        movieList.add("Catch me if you can");
+        movieList.add("9");
+        System.out.println(movieList);
     }
-
     public void displayList(){
-        System.out.println("You have " + movieList.size() + " items in favorite:");
-        for(int i = 0; i < movieList.size(); i++){
-            System.out.println("Movie " + (i+1) + " " + movieList.get(i));
+        System.out.println("You have " + movieList.size() + " item in list");
+        for (int i = 0;i < movieList.size();i++){
+            System.out.println("Movie  " + (i + 1) + "  " + movieList.get(i));
         }
     }
-
     public void updateMovie(int index, String movie){
-        movieList.set(index, movie);
-        System.out.println("Updated");
-        System.out.println("Movie " + (index + 1) + " " + movie);
+        movieList.set(index,movie);
+        System.out.println("Updated ");
+        System.out.println("Movie  " + (index + 1) + " " + movie);
     }
-
     public void removeMovie(int index){
         String movie = movieList.get(index);
         movieList.remove(index);
         System.out.println("Removed " + movie);
     }
-
-
-    public String findMovie(String search){
+    public String findMove(String search){
         int position = movieList.indexOf(search);
-        if(position > 0){
+        if (position > 0 ){
             return movieList.get(position);
         }
-        return null;
+        return  null;
     }
 }
