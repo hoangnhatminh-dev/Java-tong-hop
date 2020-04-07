@@ -1,0 +1,7 @@
+CREATE TABLE student(
+	student_id INT UNIQUE NOT NULL,
+	student_name VARCHAR(50) NOT NULL,
+	student_address VARCHAR(200) NOT NULL,
+	student_phone VARCHAR(20) NOT NULL
+
+);
